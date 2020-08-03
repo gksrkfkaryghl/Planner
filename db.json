@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "shortid": "Hm4esiF5B",
+      "id": "1234",
+      "password": "$2b$10$iRUaniyY3qaTS2BGjjGBaOi92nKBek9thAn9uhD60lcybJOz4qWsW",
+      "nickname": "1234"
+    },
+    {
+      "shortid": "2H07fhDqW",
+      "id": "asdf",
+      "password": "$2b$10$tmaWkgkpgKiGaaOuysjWrOfvGQGZL96f9Mwdka/7lvavdvp/n.f6u",
+      "nickname": "Jang"
+    },
+    {
+      "shortid": "41EMHc6br",
+      "id": "a",
+      "password": "$2b$10$TimAxzSscjb.ZAEIbuQnJeU/M7WCWVcUs9ti0b6bV1fq0mcOdrlTK",
+      "nickname": "a"
+    }
+  ]
+}
