@@ -25,10 +25,12 @@ app.use(flash());
 app.use(cors());
 
 var toDoListRouter = require('./routes/toDoList') ;
+var pageRouter = require('./routes/page') ;
 var passport = require('./lib/passport')(app);
 var authRouter = require('./routes/auth')(passport);
 
 app.use('/', toDoListRouter) ;
+app.use('/page', pageRouter) ;
 app.use('/auth', authRouter) ;
 
 app.use(function(req, res, next) {

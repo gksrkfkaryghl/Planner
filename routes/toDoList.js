@@ -9,9 +9,13 @@ router.get('/', function(request, response) {
 
     var html = template.HTML(title, 
     `<p>등록된 할 일이 없습니다.</p>
-    <form action="/write">
-        <button><a href="/page/create_toDo>">오늘의 할일 설정하기</a></button>
-    </form>`, statusUI);
+    <input type="button"  value="오늘의 할일 설정하기" onclick="createToDoList()">
+    <script type="text/javascript">
+        function createToDoList() {
+            location.href = "/page/create_ToDoList";
+        }
+    </script>
+    `, statusUI);
     response.send(html);
 });
 

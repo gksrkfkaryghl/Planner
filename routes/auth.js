@@ -20,9 +20,9 @@ module.exports = function(passport) {
         var html = template.LOGIN(title, 
         `<div style="color:red">${feedback}</div>
         <form action="/auth/login_process" method="post">
-            <p><input type="text" name="id" placeholder="아이디"></p>
-            <p><input type="password" name="password" placeholder="비밀번호"></p>
-            <br><p><input type="submit" value="로그인"></p>
+            <p><input type="text" class="input_sign" name="id" placeholder="아이디"></p>
+            <p><input type="password" class="input_sign" name="password" placeholder="비밀번호"></p>
+            <br><p><input type="submit" class="input_sign" value="로그인"></p>
         </form>
         `);
         response.send(html);
@@ -61,11 +61,11 @@ module.exports = function(passport) {
         var html = template.LOGIN(title, 
             `<div style="color:red">${feedback}</div>
             <form action="/auth/register_process" method="post">
-            <p><input type="text" name="id" placeholder="id"></p>
-            <p><input type="password" name="password" placeholder="password"></p>
-            <p><input type="password" name="password2" placeholder="confirm_password"></p>
-            <p><input type="text" name="nickname" placeholder="nickname"></p>
-            <p><input type="submit" value="login"></p>
+            <p><input type="text" class="input_sign" name="id" placeholder="id"></p>
+            <p><input type="password" class="input_sign" name="password" placeholder="password"></p>
+            <p><input type="password" class="input_sign" name="password2" placeholder="confirm_password"></p>
+            <p><input type="text" class="input_sign" name="nickname" placeholder="nickname"></p>
+            <p><input type="submit" class="input_sign" value="login"></p>
             </form>
         `);
         response.send(html);
