@@ -17,6 +17,13 @@
       "id": "a",
       "password": "$2b$10$TimAxzSscjb.ZAEIbuQnJeU/M7WCWVcUs9ti0b6bV1fq0mcOdrlTK",
       "nickname": "a"
+    },
+    {
+      "shortid": "oLex7RBVs",
+      "id": "t",
+      "password": "$2b$10$41Br/DDrY/J1RkMRH.5Pb.Mx/YcSl8D8fxv5SgK6rk3cAp/E5SZ/2",
+      "nickname": "tt"
     }
-  ]
+  ],
+  "toDoList": []
 }
