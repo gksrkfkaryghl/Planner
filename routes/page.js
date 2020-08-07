@@ -37,13 +37,16 @@ router.post("/create_ToDoList_process", function(request, response) {
     } else {
         list = post.input;
     }
-    console.log("list: ", list, "post:", post, post.listCount, post.input[0])
     
-    for(var i = 0 ; i < list.length; i++) {
-        db.get('toDoList').push({
-            title: list[i],
-            num: i
-        }).write();
+    var listNum = 0;
+    for(var i = 0 ; i < listCount; i++) {
+        if(list[i] != "") {
+            db.get('toDoList').push({
+                title: list[i],
+                num: listNum
+            }).write();
+            listNum++;
+        }  
     }
 
     response.redirect('/');
@@ -94,11 +97,15 @@ router.post('/update_ToDoList_process', function(request, response) {
         list = post.input;
     }
 
+    var listNum = 0;
     for(var i = 0 ; i < listCount; i++) {
-        db.get('toDoList').push({
-            title: list[i],
-            num: i
-        }).write();
+        if(list[i] != "") {
+            db.get('toDoList').push({
+                title: list[i],
+                num: listNum
+            }).write();
+            listNum++;
+        }  
     }
     response.redirect('/');
 })
