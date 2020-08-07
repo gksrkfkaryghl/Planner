@@ -25,5 +25,10 @@
       "nickname": "tt"
     }
   ],
-  "toDoList": []
+  "toDoList": [
+    {
+      "title": "ㅣ",
+      "num": 0
+    }
+  ]
 }
