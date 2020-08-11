@@ -49,6 +49,9 @@ body {
 }       
 
 #topic {
+    font-size: x-large;
+    font-weight: bold;
+    color: royalblue;
     width: 85%;  
     height: 10%;
     padding-top: 3rem;
@@ -57,7 +60,7 @@ body {
 }
 
 #description {
-    padding-top: 7rem;
+    padding-top: 3rem;
 }
 
 .login {
@@ -98,7 +101,7 @@ body {
     width: 90%;
     height: 1.4rem;
     font-size: 1rem;
-    padding-right: 0rem;
+    padding-right: 1rem;
 }
 
 #controler {
@@ -106,9 +109,58 @@ body {
 }
 
 .order {
-    padding-top: 3rem;
+    padding-top: 4rem;
 }
 
 #submit {
-    padding-top: 4rem;
+    padding-top: 2.5rem;
+}
+
+ul {
+    text-align: left;
+    font-size: large;
+    font-weight: 600;
+    padding-left: 20rem;
+}
+
+ul li {
+    list-style:none;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+    font-style: oblique; 
+}
+
+#rate {
+    text-align: left;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    font-weight: bold;
+}
+
+#rate_text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: large;
+}
+
+#graph_num {
+    font-size: 60px;
+    color:green;
+    text-align: right;
+}
+
+#graph {
+    color:green;
+    width:51rem;
+    background-color:rgb(139, 172, 139);
+}
+
+#progress {
+    width: 0%;
+    background-color: green;
 }

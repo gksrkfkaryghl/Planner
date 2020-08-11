@@ -23,7 +23,7 @@ router.get('/create_ToDoList', function(request, response) {
         </div>
         <p id="submit"><input type="submit" value="완료"></p>
     </form>
-    `, '', statusUI);
+    `, '', '', statusUI);
     response.send(html);
 });
 
@@ -77,7 +77,7 @@ router.get("/update_ToDoList", function(request, response) {
         </div>
         <p id="submit"><input type="submit" value="완료"></p>
     </form>
-    `, ``, statusUI, list.length);
+    `, ``, ``, statusUI, list.length);
 
     response.send(html);
 })
