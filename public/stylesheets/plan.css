@@ -124,15 +124,32 @@ ul {
 }
 
 ul li {
+    margin: 0;
+    margin-right: 20rem;
+    padding: 0.5rem;
     list-style:none;
     cursor: pointer;
     position: relative;
     transition: 0.2s;
+    background-color: #E0FFFF;
 }
 
-ul li.checked {
+li:nth-child(odd) {
+    background-color: #FFF0F5;
+}
+
+li:hover {
+    background-color: #ADD8E6;
+}
+
+li.checked {
+    background-color: #87CEEB;
     text-decoration: line-through;
     font-style: oblique; 
+}
+
+li:nth-child(odd).checked {
+    background-color: #FFC0CB;
 }
 
 #rate {

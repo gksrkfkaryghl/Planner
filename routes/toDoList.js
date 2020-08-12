@@ -13,7 +13,7 @@ router.get('/', function(request, response) {
     var list = db.get('toDoList').value();
     if(1 <= list.length) {
         for(var i = 0 ; i < list.length ; i++) {
-            description = description + `<p><li>${list[i].title}</li></p>`
+            description = description + `<li>${list[i].title}</li>`
         }
         description += '</ul>';
         achievement_rate = `<div id="rate">
