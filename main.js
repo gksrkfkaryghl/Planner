@@ -24,12 +24,12 @@ app.use(session({
 app.use(flash());
 app.use(cors());
 
-var toDoListRouter = require('./routes/toDoList') ;
+var indexRouter = require('./routes') ;
 var pageRouter = require('./routes/page') ;
 var passport = require('./lib/passport')(app);
 var authRouter = require('./routes/auth')(passport);
 
-app.use('/', toDoListRouter) ;
+app.use('/', indexRouter) ;
 app.use('/page', pageRouter) ;
 app.use('/auth', authRouter) ;
 
