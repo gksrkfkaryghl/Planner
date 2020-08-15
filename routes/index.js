@@ -6,6 +6,7 @@ const db = require('../lib/db.js');
 
 router.get('/', function(request, response) {
     var statusUI = auth.statusUI(request, response);
+    console.log(statusUI);
     var html = template.HOME(statusUI);
 
     response.send(html);

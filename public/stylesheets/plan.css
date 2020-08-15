@@ -17,6 +17,13 @@ body {
     grid-template-columns: 30fr 2fr 1fr 2fr 1fr;
 }
 
+.top_menu {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
 #empty {
     background-color: #099523;
     height: 2rem  ;
@@ -86,10 +93,14 @@ body {
     width: 30rem;
 }
 
-.input_sign {
+.input_sign, #facebookLogin {
     width: 98%;
     height: 3rem;
     font-size: 1rem;
+}
+
+#facebook {
+    padding-top: 4rem;
 }
 
 #new_list {

@@ -24,6 +24,7 @@ module.exports = function(passport) {
             <p><input type="password" class="input_sign" name="password" placeholder="비밀번호"></p>
             <br><p><input type="submit" class="input_sign" value="로그인"></p>
         </form>
+        <div id="facebook"><input type="button" id="facebookLogin" value="Login With Facebook" onclick="goTo_facebook_login()"></div>
         `, '');
         response.send(html);
     })
@@ -66,7 +67,8 @@ module.exports = function(passport) {
             <p><input type="password" class="input_sign" name="password2" placeholder="confirm_password"></p>
             <p><input type="text" class="input_sign" name="nickname" placeholder="nickname"></p>
             <p><input type="submit" class="input_sign" value="login"></p>
-            </form>
+            </form>         
+            <div id="facebook"><input type="button" id="facebookLogin" value="Sign-Up With Facebook" onclick="goTo_facebook_login()"></div>
         `, '');
         response.send(html);
     });
