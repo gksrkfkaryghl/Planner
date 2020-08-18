@@ -22,7 +22,11 @@ app.use(session({
       }
 }))
 app.use(flash());
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:3000", // server의 url이 아닌, 요청하는 client의 url
+    credentials: true
+    })
+);
 
 var indexRouter = require('./routes') ;
 var pageRouter = require('./routes/page') ;
@@ -42,7 +46,7 @@ app.use(function(err, req, res, next) {
     res.status(500).send('someting broke!') ;
 });
 
-app.listen(3000, function() {
+app.listen(3000, '0.0.0.0', function() {
     console.log('planner app listening on port 3000!') ;
 });
 

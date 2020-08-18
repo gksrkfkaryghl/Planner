@@ -65,7 +65,7 @@ module.exports = function(passport) {
             <p><input type="text" class="input_sign" name="id" placeholder="id"></p>
             <p><input type="password" class="input_sign" name="password" placeholder="password"></p>
             <p><input type="password" class="input_sign" name="password2" placeholder="confirm_password"></p>
-            <p><input type="text" class="input_sign" name="nickname" placeholder="nickname"></p>
+            <p><input type="text" class="input_sign" name="displayName" placeholder="nickname"></p>
             <p><input type="submit" class="input_sign" value="login"></p>
             </form>         
             <div id="facebook"><input type="button" id="facebookLogin" value="Sign-Up With Facebook" onclick="goTo_facebook_login()"></div>
@@ -78,9 +78,9 @@ module.exports = function(passport) {
         var id = post.id;
         var password = post.password;
         var password2 = post.password2;
-        var nickname = post.nickname;
+        var displayName = post.displayName;
         
-        if( !(id && password && password2 && nickname) ) {
+        if( !(id && password && password2 && displayName) ) {
             request.flash('error', "빈칸을 빠짐없이 입력해주세요.");
             response.redirect('/auth/register');
         } else if(password != password2) {
@@ -88,13 +88,34 @@ module.exports = function(passport) {
             response.redirect('/auth/register');
         } else {
             bcrypt.hash(password, 10, function(err, hash) {
-                var user = {
-                    shortid:shortid.generate(),
-                    id:id,
-                    password:hash,
-                    nickname:nickname
+                var puser = db.get('users').find({id:id}).value();
+                if(puser){
+                  puser.password = hash;
+                  puser.displayName = displayName;
+                  db.get('users').find({id:puser.id}).assign(puser).write();
+                } else {
+                  var user = {
+                    shortid: shortid.generate(),
+                    id: id,
+                    password: hash,
+                    displayName: displayName
+                  };
+                  db.get('users').push(user).write();
                 }
-                db.get('users').push(user).write();
+                // var puser = db.get('users').find({id:id}).value();
+                // if(puser){
+                // puser.password = hash;
+                // puser.nickname = nickname;
+                // db.get('users').find({shortid:puser.id}).assign(puser).write();
+                // } else {
+                //     var user = {
+                //         shortid:shortid.generate(),
+                //         id:id,
+                //         password:hash,
+                //         nickname:nickname
+                //     }
+                //     db.get('users').push(user).write();
+                // }
                 request.login(user, function(err) {
                     return response.redirect('/');
                 });
