@@ -9,6 +9,8 @@ var flash = require('connect-flash');
 const cors = require('cors');
 var db = require('./lib/db');
 
+app.use('/routes', express.static(__dirname + "/script"));
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(compression());
@@ -22,10 +24,12 @@ app.use(session({
       }
 }))
 app.use(flash());
-app.use(cors({
-    origin: "http://localhost:3000", // server의 url이 아닌, 요청하는 client의 url
-    credentials: true
-    })
+app.use(cors(
+    // {
+    // origin: "http://192.168.0.105:3000", // server의 url이 아닌, 요청하는 client의 url
+    // credentials: true
+    // }
+    )
 );
 
 var indexRouter = require('./routes') ;
@@ -46,7 +50,7 @@ app.use(function(err, req, res, next) {
     res.status(500).send('someting broke!') ;
 });
 
-app.listen(3000, '0.0.0.0', function() {
+app.listen(3000, function() {
     console.log('planner app listening on port 3000!') ;
 });
 
